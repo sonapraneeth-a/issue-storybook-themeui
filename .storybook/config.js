@@ -7,9 +7,20 @@ import index from "../src/gatsby-plugin-theme-ui/index.js";
 // automatically import all files ending in *.stories.js
 const req = require.context('../tests/storybook', true, /\.stories\.js$/)
 
+// Reference: https://storybook.js.org/docs/basics/writing-stories/#decorators
 function loadStories() {
-  req.keys().forEach(filename => req(filename))
+  req.keys().forEach(filename => {
+    console.log(filename);
+    req(filename);
+  });
 }
+
+const loaderFn = () => {
+  const allExports = [];
+  const req = require.context('../tests/storybook', true, /\.stories\.js$/);
+  req.keys().forEach(fname => allExports.push(req(fname)));
+  return allExports;
+};
 
 addDecorator((story) => (
   <ThemeProvider theme={index}>
@@ -30,7 +41,7 @@ window.___navigate = pathname => {
   action("NavigateTo:")(pathname)
 }
 
-console.log(loadStories);
+console.log(loadStories());
 console.log(req);
 
-configure(loadStories, module);
+configure(loaderFn, module);
