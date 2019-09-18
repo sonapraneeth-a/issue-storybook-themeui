@@ -1,21 +1,22 @@
 import React from 'react';
 import Button from '../../src/components/button';
-import { storiesOf } from "@storybook/react";
 
-export default { title: 'Button' };
+export default { 
+  title: 'Light theme | Button' ,
+  component: Button,
+};
 
-storiesOf("Light Mode|Button", module)
-  .add("Primary", () => {
-    return (
-      <Button type="primary">
-        Primary Button
-      </Button>
-    )
-  })
-  .add("Secondary", () => {
-    return (
-      <Button type="secondary">
-        Secondary Button
-      </Button>
-    )
-  });
+export const Primary = () => {
+  return (
+    <Button type="primary">
+      Primary Button
+    </Button>
+  )
+};
+export const Secondary = () => {
+  return (
+    <Button type="secondary">
+      Secondary Button
+    </Button>
+  )
+};
