@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook"
+    "storybook": "set NODE_ENV=production && start-storybook -s public",
+    "build-storybook": "set NODE_ENV=production && build-storybook -s public"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +17,16 @@
     "babel-loader": "^8.0.6"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.17",
+    "@mdx-js/react": "^1.4.5",
+    "babel-plugin-remove-graphql-queries": "^2.7.7",
     "gatsby": "^2.15.17",
+    "gatsby-design-tokens": "^1.0.4",
+    "gatsby-plugin-theme-ui": "^0.2.43",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "theme-ui": "^0.2.43",
+    "typeface-pt-sans": "0.0.72",
+    "typeface-signika-negative": "0.0.71"
   }
 }
