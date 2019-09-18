@@ -33,4 +33,4 @@ window.___navigate = pathname => {
 console.log(loadStories);
 console.log(req);
 
-configure(req, module);
+configure(loadStories, module);
