@@ -20,7 +20,7 @@
     "@emotion/core": "^10.0.17",
     "@mdx-js/react": "^1.4.5",
     "babel-plugin-remove-graphql-queries": "^2.7.7",
-    "gatsby": "^2.15.17",
+    "gatsby": "^4.25.7",
     "gatsby-design-tokens": "^1.0.4",
     "gatsby-plugin-theme-ui": "^0.2.43",
     "react": "^16.9.0",
